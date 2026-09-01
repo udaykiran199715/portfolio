@@ -10,12 +10,12 @@ export const profile = {
   site: "https://portfolio-crl.pages.dev",
   resumeUrl: "/Uday_Kiran_Akula_Resume.pdf",
   summary:
-    "Senior Software Developer with 6 years of experience architecting and shipping web and mobile products across project management, logistics, community management, insurance, and e-commerce domains. Deep expertise in React.js, Next.js, React Native, and Node.js, with a track record of owning features end-to-end — from data-modeling and API design to performance-tuned UI and app-store release.",
+    "Senior Software Developer with 6 years building React.js, Next.js, and React Native products end-to-end, across project management, logistics, community management, insurance, and e-commerce domains. Owns features from data modeling and API design through UI implementation, state management, and app-store release, on both web (Redux Toolkit, Zustand, React Query) and mobile (Expo, React Native) codebases, working across the Node.js/Express backend layer when a feature needs it.",
 };
 
 export const skillGroups = [
   {
-    label: "Frontend",
+    label: "Frontend Development",
     skills: [
       "React.js",
       "Next.js",
@@ -24,27 +24,31 @@ export const skillGroups = [
       "Redux Toolkit",
       "Zustand",
       "Context API",
-      "React Query",
+      "React Query / TanStack Query",
       "TailwindCSS",
-      "NativeWind",
-      "Material UI",
-      "Bootstrap",
+      "HTML5",
+      "CSS3",
+      "Responsive Design",
+      "Cross-Browser Compatibility",
     ],
   },
   {
-    label: "Mobile",
+    label: "Mobile Development",
     skills: [
       "React Native",
       "Expo",
       "Expo Router",
+      "NativeWind",
+      "iOS & Android",
       "Native Modules",
       "Firebase Cloud Messaging",
       "Secure Storage",
-      "EAS Build",
+      "Push Notifications",
+      "App Store & Play Store Deployment (EAS Build)",
     ],
   },
   {
-    label: "Backend",
+    label: "Backend & Data",
     skills: [
       "Node.js",
       "Express.js",
@@ -52,46 +56,62 @@ export const skillGroups = [
       "WebSockets",
       "Prisma",
       "Serverless Architecture",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "SQL",
     ],
-  },
-  {
-    label: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "SQL"],
   },
   {
     label: "Cloud & DevOps",
+    skills: ["AWS (S3, EC2, Lambda, CloudFront)", "Firebase", "Jenkins"],
+  },
+  {
+    label: "DevOps & Tooling",
     skills: [
-      "AWS (S3, EC2, Lambda, CloudFront)",
-      "Firebase",
-      "Jenkins",
       "GitHub Actions",
       "CI/CD Pipelines",
+      "Continuous Integration & Deployment",
+      "Git",
+      "Scalable System Design",
+      "Technical Documentation",
     ],
   },
   {
-    label: "Quality & Tooling",
+    label: "AI / LLM",
+    skills: [
+      "LLM-Powered Product Delivery",
+      "Conversational / Chat UI",
+      "Multi-Format Response Rendering",
+      "AI-Assisted Development (Claude Code, GitHub Copilot)",
+    ],
+  },
+  {
+    label: "Testing & Quality",
     skills: [
       "React Testing Library",
-      "Postman",
-      "Git/GitHub",
-      "Jira",
+      "Unit / Integration Testing",
+      "Code Reviews",
+      "Quality Assurance",
       "Performance Optimization",
-      "i18n/l10n",
-      "RBAC",
     ],
+  },
+  {
+    label: "Tools & Process",
+    skills: ["Git/GitHub", "Jira", "Postman", "Agile/Scrum", "i18n/l10n", "RBAC"],
   },
 ];
 
 export const experience = [
   {
     company: "Omnics Technologies Pvt Ltd",
-    role: "Senior Software Developer",
+    role: "Senior Software Developer — React.js & React Native",
     period: "Aug 2023 – Present",
     highlights: [
-      "Architected the state layer for a multi-module sales platform by pairing Redux Toolkit with Zustand and React Query, cutting redundant API calls and eliminating stale-state bugs across 10+ interconnected modules.",
-      "Led a mobile app’s repository-pattern data layer so screens stay decoupled from API state — new backend contracts plug in via a single flag with zero screen-level changes.",
-      "Took a community-management app through Play Store and App Store release readiness, including EAS Build/Submit pipelines and a documented release runbook.",
-      "Virtualized large-scale data grids with React Window, keeping scroll and render performant on datasets of 100,000+ records that previously caused UI freezes.",
+      "Owns the state architecture (Redux Toolkit, Zustand, React Query) for BK Sales Platform's web console and its companion Expo/React Native app.",
+      "Built 15+ feature modules and shipped CommCorner, a community-management app, to both the App Store and Google Play via EAS Build.",
+      "Built the Gantt-chart and 100,000+ record data-grid system (React Window) for CLIMOVA, an enterprise project-management platform.",
+      "Built the geo-spatial logistics tooling and driver-facing React Native app for LOGIT.",
     ],
   },
   {
@@ -99,8 +119,9 @@ export const experience = [
     role: "Software Engineer",
     period: "Oct 2021 – Jul 2023",
     highlights: [
-      "Extended a production insurance portal to support claims, policy management, fund switching, and beneficiary updates, resolving critical CRs blocking customer-facing releases.",
-      "Streamlined multiple customer request workflows, reducing portal friction and improving reliability, while coordinating weekly delivery reporting with stakeholders.",
+      "Extended a production insurance portal (FWD Insurance Portal) to support claims, policy management, fund switching, and beneficiary updates, resolving critical CRs blocking releases.",
+      "Streamlined multiple customer request workflows, improving reliability and portal efficiency.",
+      "Coordinated weekly/monthly delivery reporting with stakeholders.",
     ],
   },
   {
@@ -108,8 +129,9 @@ export const experience = [
     role: "Software Developer",
     period: "Sep 2020 – Oct 2021",
     highlights: [
-      "Built a mobile-first, SEO-optimized e-commerce storefront (login, cart, wishlist, checkout), integrating with backend checkout-flow APIs.",
-      "Built a real-time influencer earnings dashboard with search, filtering, and pagination for high-volume order data, and automated commission payout calculation from a manual reconciliation process.",
+      "Built a mobile-first, SEO-optimized e-commerce storefront (login, cart, wishlist, checkout) integrated with backend APIs and checkout flow.",
+      "Built a real-time influencer earnings dashboard with search, filtering, and pagination for high-volume order data.",
+      "Automated commission payout calculation from promo codes and order tracking, replacing manual reconciliation.",
     ],
   },
 ];
@@ -142,10 +164,10 @@ export const projects: Project[] = [
       "react-intl",
     ],
     impact: [
-      "Cut redundant API calls and eliminated a class of stale-state bugs across 10+ interconnected modules.",
+      "Built the web console's state layer using Redux Toolkit, Zustand, and React Query across 10+ interconnected modules, cutting out redundant API calls and stale-state bugs.",
       "Built a drag-and-drop task/scheduling board with an integrated PDF viewer and multilingual UI, enabling simultaneous multi-locale launch.",
-      "Standardized environment-driven configuration (Vite env vars) across local, staging, and production builds, eliminating environment-specific bugs before release.",
-      "Implemented secure, persistent OAuth authentication with refresh tokens, keeping users logged in across app restarts.",
+      "Built the mobile app's data layer using a repository pattern, decoupling screens from API state so new backend contracts plug in via a single flag with no screen-level changes.",
+      "Implemented persistent OAuth authentication (password + refresh-token grant) using Expo Secure Store and AsyncStorage, keeping sessions alive across app restarts.",
     ],
   },
   {
@@ -155,18 +177,12 @@ export const projects: Project[] = [
     summary:
       "A native iOS/Android app covering attendance, gate approvals, dues, amenities, staff management, and facility reporting.",
     role: "Owned 15+ feature modules end-to-end across a multi-developer team.",
-    tech: [
-      "Expo Router",
-      "TypeScript",
-      "NativeWind",
-      "Firebase Cloud Messaging",
-      "Notifee",
-    ],
+    tech: ["Expo Router", "TypeScript", "NativeWind", "Firebase Cloud Messaging", "Notifee"],
     impact: [
       "Structured the codebase into isolated feature domains to keep it mergeable across a multi-developer team.",
       "Integrated PhonePe for society dues collection and built a PDF pipeline for receipts and reports, replacing manual spreadsheet billing.",
       "Implemented push notifications end-to-end and added document scanning and QR-code workflows for gate/visitor approvals.",
-      "Took the app through Play Store and App Store release readiness with a documented runbook adopted by the team.",
+      "Took the app through Play Store and App Store release readiness using EAS Build/Submit pipelines and config-plugin-based native builds, and wrote the release runbook the team uses going forward.",
     ],
   },
   {
@@ -191,7 +207,7 @@ export const projects: Project[] = [
     summary:
       "A logistics management solution with geo-spatial tooling, invoicing, and a real-time companion mobile app.",
     role: "Built the geo-spatial estimation tool, invoicing engine, and companion mobile app.",
-    tech: ["React", "React Native", "Google Maps API", "Firebase"],
+    tech: ["React", "Node.js", "React Native", "Google Maps API", "Firebase"],
     impact: [
       "Built a geo-spatial tool for drawing custom polygons and auto-calculating item capacity per region, replacing manual area estimation.",
       "Designed a flexible invoicing engine supporting daily/monthly/yearly billing cycles with configurable branding.",
@@ -204,11 +220,39 @@ export const projects: Project[] = [
     domain: "Conversational UI",
     summary:
       "A chat interface supporting code, table, and conversational response formats.",
-    role: "Designed the UI and the storage/retrieval layer for conversation history.",
-    tech: ["React", "TypeScript"],
+    role: "Designed the UI and the retrieval layer for conversation history.",
+    tech: ["React", "Node.js"],
     impact: [
       "Designed a chat UI supporting code, table, and conversational response formats, modeled on leading chat product UX patterns.",
-      "Built an optimized storage/retrieval layer for fast conversation history search.",
+      "Built an optimized retrieval layer for fast conversation history search.",
+    ],
+  },
+  {
+    slug: "fwd-insurance-portal",
+    name: "FWD Insurance Portal",
+    domain: "Insurance · Enterprise Web Portal",
+    summary:
+      "Enterprise insurance portal supporting claims, policy management, fund switching, and beneficiary management.",
+    role: "Extended a production insurance portal to support critical customer-facing workflows.",
+    tech: ["React", "Node.js"],
+    impact: [
+      "Extended a production insurance portal to support claims, policy management, fund switching, and beneficiary updates, resolving critical CRs blocking releases.",
+      "Streamlined multiple customer request workflows, improving reliability and portal efficiency.",
+      "Coordinated weekly/monthly delivery reporting with stakeholders.",
+    ],
+  },
+  {
+    slug: "ecommerce-influencer-dashboard",
+    name: "E-Commerce Platform & Influencer Dashboard",
+    domain: "E-Commerce · Web Platform",
+    summary:
+      "Mobile-first storefront plus a real-time influencer earnings dashboard with automated commission payouts.",
+    role: "Built the storefront and a companion analytics dashboard for the marketing team.",
+    tech: ["React", "Node.js", "AWS"],
+    impact: [
+      "Built a mobile-first, SEO-optimized e-commerce storefront (login, cart, wishlist, checkout) integrated with backend APIs and checkout flow.",
+      "Built a real-time influencer earnings dashboard with search, filtering, and pagination for high-volume order data.",
+      "Automated commission payout calculation from promo codes and order tracking, replacing manual reconciliation.",
     ],
   },
 ];
@@ -219,7 +263,7 @@ export const achievements = [
 ];
 
 export const education = {
-  degree: "B.Tech",
+  degree: "B.Tech, Computer Science",
   school: "JNTUK",
   period: "2014 – 2018",
 };
