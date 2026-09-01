@@ -7,7 +7,7 @@ export const profile = {
   phone: "+91 8106454161",
   github: "https://github.com/udaykiran199715",
   linkedin: "https://www.linkedin.com/in/udaykiranakula/",
-  site: "https://udaykiran199715.github.io",
+  site: "https://portfolio-crl.pages.dev",
   resumeUrl: "/Uday_Kiran_Akula_Resume.pdf",
   summary:
     "Senior Software Developer with 6 years of experience architecting and shipping web and mobile products across project management, logistics, community management, insurance, and e-commerce domains. Deep expertise in React.js, Next.js, React Native, and Node.js, with a track record of owning features end-to-end — from data-modeling and API design to performance-tuned UI and app-store release.",
@@ -49,7 +49,6 @@ export const skillGroups = [
       "Node.js",
       "Express.js",
       "REST APIs",
-      "GraphQL",
       "WebSockets",
       "Prisma",
       "Serverless Architecture",
@@ -64,7 +63,6 @@ export const skillGroups = [
     skills: [
       "AWS (S3, EC2, Lambda, CloudFront)",
       "Firebase",
-      "Docker",
       "Jenkins",
       "GitHub Actions",
       "CI/CD Pipelines",
@@ -73,7 +71,6 @@ export const skillGroups = [
   {
     label: "Quality & Tooling",
     skills: [
-      "Jest",
       "React Testing Library",
       "Postman",
       "Git/GitHub",
@@ -142,13 +139,12 @@ export const projects: Project[] = [
       "React Query",
       "Expo",
       "React Native",
-      "Docker",
       "react-intl",
     ],
     impact: [
       "Cut redundant API calls and eliminated a class of stale-state bugs across 10+ interconnected modules.",
       "Built a drag-and-drop task/scheduling board with an integrated PDF viewer and multilingual UI, enabling simultaneous multi-locale launch.",
-      'Containerized the frontend with Docker and environment-driven config, removing "works on my machine" deploy issues.',
+      "Standardized environment-driven configuration (Vite env vars) across local, staging, and production builds, eliminating environment-specific bugs before release.",
       "Implemented secure, persistent OAuth authentication with refresh tokens, keeping users logged in across app restarts.",
     ],
   },
