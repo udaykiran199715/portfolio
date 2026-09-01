@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-ink: #0a0a0f;
+  --color-panel: #121218;
+  --color-panel-border: #232330;
+  --color-accent: #7c5cff;
+  --color-accent-soft: #9d84ff;
+  --color-mint: #3ee6c4;
+  --color-mist: #a1a1b5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #f2f2f6;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-panel-border);
+  border-radius: 999px;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, var(--color-accent-soft), var(--color-mint));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(-50%, 0) scale(1); }
+  50% { transform: translate(-45%, 5%) scale(1.08); }
+}
+
+@keyframes drift-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-4%, -6%) scale(1.05); }
+}
+
+.animate-drift {
+  animation: drift 18s ease-in-out infinite;
+}
+
+.animate-drift-slow {
+  animation: drift-slow 24s ease-in-out infinite;
+}
