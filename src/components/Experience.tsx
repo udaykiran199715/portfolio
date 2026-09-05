@@ -38,7 +38,9 @@ export function Experience() {
                 <h3 className="font-display text-xl font-semibold text-white">{job.role}</h3>
                 <span className="text-sm text-mist">{job.period}</span>
               </div>
-              <p className="mt-1 text-accent-soft">{job.company}</p>
+              <p className="mt-1 text-accent-soft">
+                {job.company} <span className="text-mist">— {job.location}</span>
+              </p>
               <ul className="mt-4 space-y-2.5">
                 {job.highlights.map((point) => (
                   <li key={point} className="flex gap-3 text-sm leading-relaxed text-mist sm:text-base">

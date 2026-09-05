@@ -37,7 +37,7 @@ export function Hero() {
           className="mt-6 max-w-2xl text-lg text-mist sm:text-xl"
         >
           {profile.title} building performance-tuned web & mobile products with{' '}
-          <span className="text-white">{profile.tagline}</span>. 6 years turning ambiguous
+          <span className="text-white">{profile.tagline}</span>. 6+ years turning ambiguous
           requirements into scalable, production-grade software.
         </motion.p>
 

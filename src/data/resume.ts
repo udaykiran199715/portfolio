@@ -10,7 +10,8 @@ export const profile = {
   site: "https://portfolio-crl.pages.dev",
   resumeUrl: "/Uday_Kiran_Akula_Resume.pdf",
   summary:
-    "Senior Software Developer with 6 years building React.js, Next.js, and React Native products end-to-end, across project management, logistics, community management, insurance, and e-commerce domains. Owns features from data modeling and API design through UI implementation, state management, and app-store release, on both web (Redux Toolkit, Zustand, React Query) and mobile (Expo, React Native) codebases, working across the Node.js/Express backend layer when a feature needs it.",
+    "Senior Software Developer with 6+ years building production web and mobile applications using React.js, React Native, Next.js, TypeScript, and Node.js. Built data-driven dashboards, real-time features, and end-to-end product functionality across project management, logistics, and e-commerce platforms.",
+  languages: ["English", "Telugu", "Hindi"],
 };
 
 export const skillGroups = [
@@ -29,7 +30,6 @@ export const skillGroups = [
       "HTML5",
       "CSS3",
       "Responsive Design",
-      "Cross-Browser Compatibility",
     ],
   },
   {
@@ -42,7 +42,6 @@ export const skillGroups = [
       "iOS & Android",
       "Native Modules",
       "Firebase Cloud Messaging",
-      "Secure Storage",
       "Push Notifications",
       "App Store & Play Store Deployment (EAS Build)",
     ],
@@ -55,7 +54,6 @@ export const skillGroups = [
       "REST APIs",
       "WebSockets",
       "Prisma",
-      "Serverless Architecture",
       "PostgreSQL",
       "MongoDB",
       "Redis",
@@ -68,23 +66,11 @@ export const skillGroups = [
   },
   {
     label: "DevOps & Tooling",
-    skills: [
-      "GitHub Actions",
-      "CI/CD Pipelines",
-      "Continuous Integration & Deployment",
-      "Git",
-      "Scalable System Design",
-      "Technical Documentation",
-    ],
+    skills: ["GitHub Actions", "CI/CD Pipelines", "Git", "Technical Documentation"],
   },
   {
     label: "AI / LLM",
-    skills: [
-      "LLM-Powered Product Delivery",
-      "Conversational / Chat UI",
-      "Multi-Format Response Rendering",
-      "AI-Assisted Development (Claude Code, GitHub Copilot)",
-    ],
+    skills: ["Conversational / Chat UI", "AI-Assisted Development (Claude Code, GitHub Copilot)"],
   },
   {
     label: "Testing & Quality",
@@ -92,7 +78,6 @@ export const skillGroups = [
       "React Testing Library",
       "Unit / Integration Testing",
       "Code Reviews",
-      "Quality Assurance",
       "Performance Optimization",
     ],
   },
@@ -105,6 +90,7 @@ export const skillGroups = [
 export const experience = [
   {
     company: "Omnics Technologies Pvt Ltd",
+    location: "Hyderabad, India",
     role: "Senior Software Developer — React.js & React Native",
     period: "Aug 2023 – Present",
     highlights: [
@@ -116,6 +102,7 @@ export const experience = [
   },
   {
     company: "Azentio Software Pvt Ltd",
+    location: "Bengaluru, India",
     role: "Software Engineer",
     period: "Oct 2021 – Jul 2023",
     highlights: [
@@ -126,6 +113,7 @@ export const experience = [
   },
   {
     company: "SUGAR Cosmetics",
+    location: "Mumbai, India",
     role: "Software Developer",
     period: "Sep 2020 – Oct 2021",
     highlights: [

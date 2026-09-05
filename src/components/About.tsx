@@ -45,6 +45,16 @@ export function About() {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-6 text-sm text-mist"
+        >
+          Languages: {profile.languages.join(', ')}
+        </motion.p>
       </div>
     </section>
   )
