@@ -1,9 +1,10 @@
+import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import { Download, X } from 'lucide-react'
 import { profile } from '../data/resume'
 
 export function ResumeModal({ onClose }: { onClose: () => void }) {
-  return (
+  return createPortal(
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -40,6 +41,7 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
         </div>
         <iframe src={profile.resumeUrl} title="Resume preview" className="flex-1 bg-white" />
       </motion.div>
-    </motion.div>
+    </motion.div>,
+    document.body,
   )
 }
