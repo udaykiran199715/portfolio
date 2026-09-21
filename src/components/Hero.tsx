@@ -1,8 +1,14 @@
-import { motion } from 'framer-motion'
-import { ArrowDown, Code2, Download, Link, Mail, MapPin } from 'lucide-react'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ArrowDown, Code2, Eye, Link, Mail, MapPin } from 'lucide-react'
 import { profile } from '../data/resume'
+import { isMobileDevice } from '../lib/device'
+import { ResumeModal } from './ResumeModal'
 
 export function Hero() {
+  const [resumeOpen, setResumeOpen] = useState(false)
+  const mobile = isMobileDevice()
+
   return (
     <section id="hero" className="relative flex min-h-screen flex-col justify-center px-6 pt-24">
       <div className="mx-auto w-full max-w-6xl">
@@ -53,13 +59,12 @@ export function Hero() {
           >
             View my work
           </a>
-          <a
-            href={profile.resumeUrl}
-            download
+          <button
+            onClick={() => setResumeOpen(true)}
             className="flex items-center gap-2 rounded-full border border-panel-border px-6 py-3 text-sm font-medium text-white transition hover:border-mist"
           >
-            <Download size={16} /> Download resume
-          </a>
+            <Eye size={16} /> Preview resume
+          </button>
           <a
             href={`mailto:${profile.email}`}
             className="flex items-center gap-2 text-sm text-mist transition hover:text-white"
@@ -68,22 +73,24 @@ export function Hero() {
           </a>
           <a
             href={profile.github}
-            target="_blank"
-            rel="noreferrer"
+            {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
             className="flex items-center gap-2 text-sm text-mist transition hover:text-white"
           >
             <Code2 size={16} /> GitHub
           </a>
           <a
             href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
+            {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
             className="flex items-center gap-2 text-sm text-mist transition hover:text-white"
           >
             <Link size={16} /> LinkedIn
           </a>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {resumeOpen && <ResumeModal onClose={() => setResumeOpen(false)} />}
+      </AnimatePresence>
 
       <motion.a
         href="#about"

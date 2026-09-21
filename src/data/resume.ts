@@ -103,7 +103,7 @@ export const experience = [
   {
     company: "Azentio Software Pvt Ltd",
     location: "Bengaluru, India",
-    role: "Software Engineer",
+    role: "Engineer — Application Management",
     period: "Oct 2021 – Jul 2023",
     highlights: [
       "Extended a production insurance portal (FWD Insurance Portal) to support claims, policy management, fund switching, and beneficiary updates, resolving critical CRs blocking releases.",

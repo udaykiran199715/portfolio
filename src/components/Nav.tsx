@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Download, Menu, X } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Eye, Menu, X } from 'lucide-react'
 import clsx from 'clsx'
 import { useActiveSection } from '../hooks/useActiveSection'
-import { profile } from '../data/resume'
+import { ResumeModal } from './ResumeModal'
 
 const links = [
   { id: 'about', label: 'About' },
@@ -16,6 +16,7 @@ const links = [
 export function Nav() {
   const active = useActiveSection(links.map((l) => l.id))
   const [open, setOpen] = useState(false)
+  const [resumeOpen, setResumeOpen] = useState(false)
 
   return (
     <motion.header
@@ -53,13 +54,12 @@ export function Nav() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={profile.resumeUrl}
-            download
+          <button
+            onClick={() => setResumeOpen(true)}
             className="flex items-center gap-1.5 rounded-full border border-panel-border px-4 py-2 text-sm text-mist transition hover:border-mist hover:text-white"
           >
-            <Download size={14} /> Resume
-          </a>
+            <Eye size={14} /> Resume
+          </button>
           <a
             href="#contact"
             className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-soft"
@@ -96,17 +96,22 @@ export function Nav() {
             </li>
           ))}
           <li>
-            <a
-              href={profile.resumeUrl}
-              download
-              onClick={() => setOpen(false)}
+            <button
+              onClick={() => {
+                setOpen(false)
+                setResumeOpen(true)
+              }}
               className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm text-mist"
             >
-              <Download size={14} /> Download resume
-            </a>
+              <Eye size={14} /> Preview resume
+            </button>
           </li>
         </motion.ul>
       )}
+
+      <AnimatePresence>
+        {resumeOpen && <ResumeModal onClose={() => setResumeOpen(false)} />}
+      </AnimatePresence>
     </motion.header>
   )
 }

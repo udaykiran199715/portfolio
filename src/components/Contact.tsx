@@ -2,11 +2,13 @@ import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { Code2, Link, Mail, Phone, Send } from 'lucide-react'
 import { profile } from '../data/resume'
+import { isMobileDevice } from '../lib/device'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export function Contact() {
   const [status, setStatus] = useState<Status>('idle')
+  const mobile = isMobileDevice()
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -70,16 +72,14 @@ export function Contact() {
             </a>
             <a
               href={profile.github}
-              target="_blank"
-              rel="noreferrer"
+              {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
               className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-white"
             >
               <Code2 size={18} className="text-accent-soft" /> github.com/udaykiran199715
             </a>
             <a
               href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
+              {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
               className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-white"
             >
               <Link size={18} className="text-accent-soft" /> linkedin.com/in/udaykiranakula
