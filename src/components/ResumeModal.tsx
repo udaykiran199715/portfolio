@@ -21,7 +21,7 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
         className="flex h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-panel-border bg-panel"
       >
         <div className="flex items-center justify-between gap-4 border-b border-panel-border p-4">
-          <h3 className="font-display text-lg font-semibold text-white">Resume Preview</h3>
+          <h3 className="whitespace-nowrap font-display text-base font-semibold text-fg sm:text-lg">Resume Preview</h3>
           <div className="flex items-center gap-2">
             <a
               href={profile.resumeUrl}
@@ -33,7 +33,7 @@ export function ResumeModal({ onClose }: { onClose: () => void }) {
             <button
               onClick={onClose}
               aria-label="Close"
-              className="rounded-full border border-panel-border p-2 text-mist transition hover:text-white"
+              className="rounded-full border border-panel-border p-2 text-mist transition hover:text-fg"
             >
               <X size={18} />
             </button>

@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowDown, Code2, Eye, Link, Mail, MapPin } from 'lucide-react'
 import { profile } from '../data/resume'
-import { isMobileDevice } from '../lib/device'
+import { useIsMobile } from '../hooks/useIsMobile'
 import { ResumeModal } from './ResumeModal'
 
 export function Hero() {
   const [resumeOpen, setResumeOpen] = useState(false)
-  const mobile = isMobileDevice()
+  const mobile = useIsMobile()
 
   return (
     <section id="hero" className="relative flex min-h-screen flex-col justify-center px-6 pt-24">
@@ -43,7 +43,7 @@ export function Hero() {
           className="mt-6 max-w-2xl text-lg text-mist sm:text-xl"
         >
           {profile.title} building performance-tuned web & mobile products with{' '}
-          <span className="text-white">{profile.tagline}</span>. 6+ years turning ambiguous
+          <span className="text-fg">{profile.tagline}</span>. 6+ years turning ambiguous
           requirements into scalable, production-grade software.
         </motion.p>
 
@@ -61,27 +61,27 @@ export function Hero() {
           </a>
           <button
             onClick={() => setResumeOpen(true)}
-            className="flex items-center gap-2 rounded-full border border-panel-border px-6 py-3 text-sm font-medium text-white transition hover:border-mist"
+            className="flex items-center gap-2 rounded-full border border-panel-border px-6 py-3 text-sm font-medium text-fg transition hover:border-mist"
           >
             <Eye size={16} /> Preview resume
           </button>
           <a
             href={`mailto:${profile.email}`}
-            className="flex items-center gap-2 text-sm text-mist transition hover:text-white"
+            className="flex items-center gap-2 text-sm text-mist transition hover:text-fg"
           >
             <Mail size={16} /> Get in touch
           </a>
           <a
             href={profile.github}
             {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
-            className="flex items-center gap-2 text-sm text-mist transition hover:text-white"
+            className="flex items-center gap-2 text-sm text-mist transition hover:text-fg"
           >
             <Code2 size={16} /> GitHub
           </a>
           <a
             href={profile.linkedin}
             {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
-            className="flex items-center gap-2 text-sm text-mist transition hover:text-white"
+            className="flex items-center gap-2 text-sm text-mist transition hover:text-fg"
           >
             <Link size={16} /> LinkedIn
           </a>

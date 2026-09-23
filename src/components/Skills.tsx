@@ -33,12 +33,12 @@ export function Skills() {
               transition={{ delay: gi * 0.08 }}
               className="rounded-2xl border border-panel-border bg-panel/50 p-6"
             >
-              <h3 className="mb-4 font-display text-lg font-medium text-white">{group.label}</h3>
+              <h3 className="mb-4 font-display text-lg font-medium text-fg">{group.label}</h3>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-panel-border bg-ink/60 px-3 py-1.5 text-xs text-mist transition hover:border-accent/60 hover:text-white"
+                    className="rounded-full border border-panel-border bg-ink/60 px-3 py-1.5 text-xs text-mist transition hover:border-accent/60 hover:text-fg"
                   >
                     {skill}
                   </span>

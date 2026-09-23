@@ -2,6 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Runs before first paint so the saved/system theme never flashes. Mirrors applyTheme() in src/lib/theme.ts.
+      (function () {
+        var stored = null
+        try { stored = localStorage.getItem('theme') } catch (e) {}
+        var dark = stored === 'dark' || (stored !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+      })()
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Uday Kiran Akula — Senior Software Developer with 6+ years building production React.js, React Native, and Node.js applications. Open to full-time opportunities." />

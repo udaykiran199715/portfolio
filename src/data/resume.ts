@@ -95,7 +95,7 @@ export const experience = [
     period: "Aug 2023 – Present",
     highlights: [
       "Owns the state architecture (Redux Toolkit, Zustand, React Query) for BK Sales Platform's web console and its companion Expo/React Native app.",
-      "Built 15+ feature modules and shipped CommCorner, a community-management app, to both the App Store and Google Play via EAS Build.",
+      "Built 15+ feature modules and shipped CommCorner, a React Native community-management app, to both the App Store and Google Play via EAS Build.",
       "Built the Gantt-chart and 100,000+ record data-grid system (React Window) for CLIMOVA, an enterprise project-management platform.",
       "Built the geo-spatial logistics tooling and driver-facing React Native app for LOGIT.",
     ],
@@ -161,11 +161,11 @@ export const projects: Project[] = [
   {
     slug: "commcorner",
     name: "CommCorner",
-    domain: "Community & Society Management · Native App",
+    domain: "Community & Society Management · React Native App",
     summary:
-      "A native iOS/Android app covering attendance, gate approvals, dues, amenities, staff management, and facility reporting.",
+      "A React Native (Expo) app for iOS and Android covering attendance, gate approvals, dues, amenities, staff management, and facility reporting.",
     role: "Owned 15+ feature modules end-to-end across a multi-developer team.",
-    tech: ["Expo Router", "TypeScript", "NativeWind", "Firebase Cloud Messaging", "Notifee"],
+    tech: ["React Native", "Expo Router", "TypeScript", "NativeWind", "Firebase Cloud Messaging", "Notifee"],
     impact: [
       "Structured the codebase into isolated feature domains to keep it mergeable across a multi-developer team.",
       "Integrated PhonePe for society dues collection and built a PDF pipeline for receipts and reports, replacing manual spreadsheet billing.",
@@ -176,11 +176,11 @@ export const projects: Project[] = [
   {
     slug: "climova",
     name: "CLIMOVA",
-    domain: "Enterprise Project Management",
+    domain: "Enterprise Project Management · Gantt Chart",
     summary:
-      "A platform for visualizing tasks, timelines, and contract durations across concurrent projects.",
-    role: "Built the performance-critical visualization and dashboard layer.",
-    tech: ["React", "React Window", "Apex Charts"],
+      "A Gantt-chart based project management platform for visualizing tasks, timelines, and contract durations across concurrent projects.",
+    role: "Built the performance-critical Gantt chart and dashboard layer.",
+    tech: ["React", "Gantt Chart", "React Window", "Apex Charts"],
     impact: [
       "Built a high-performance Gantt chart system for tasks, timelines, and contract durations.",
       "Virtualized large-scale data grids, keeping scroll and render performant on 100,000+ record datasets that previously froze the UI.",

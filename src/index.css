@@ -11,6 +11,26 @@
   --color-accent-soft: #9d84ff;
   --color-mint: #3ee6c4;
   --color-mist: #a1a1b5;
+  --color-fg: #f2f2f6;
+}
+
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
+
+/* Dark is the default palette above; light overrides the same tokens. */
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-ink: #f6f6fb;
+  --color-panel: #ffffff;
+  --color-panel-border: #dedeea;
+  --color-accent: #6d4aff;
+  --color-accent-soft: #5b3fe0;
+  --color-mint: #0e9f85;
+  --color-mist: #5c5c72;
+  --color-fg: #14141c;
 }
 
 html {
@@ -19,7 +39,7 @@ html {
 
 body {
   background: var(--color-ink);
-  color: #f2f2f6;
+  color: var(--color-fg);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }

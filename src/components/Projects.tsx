@@ -45,11 +45,11 @@ export function Projects() {
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-accent-soft">{project.domain}</p>
-                  <h3 className="mt-2 font-display text-xl font-semibold text-white">{project.name}</h3>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-fg">{project.name}</h3>
                 </div>
                 <ArrowUpRight
                   size={20}
-                  className="mt-1 shrink-0 text-mist transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white"
+                  className="mt-1 shrink-0 text-mist transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-fg"
                 />
               </div>
               <p className="mt-3 text-sm leading-relaxed text-mist">{project.summary}</p>
@@ -97,12 +97,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-accent-soft">{project.domain}</p>
-            <h3 className="mt-2 font-display text-2xl font-semibold text-white">{project.name}</h3>
+            <h3 className="mt-2 font-display text-2xl font-semibold text-fg">{project.name}</h3>
           </div>
           <button
             onClick={onClose}
             aria-label="Close"
-            className="shrink-0 rounded-full border border-panel-border p-2 text-mist transition hover:text-white"
+            className="shrink-0 rounded-full border border-panel-border p-2 text-mist transition hover:text-fg"
           >
             <X size={18} />
           </button>
@@ -111,12 +111,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         <p className="mt-4 text-mist">{project.summary}</p>
 
         <div className="mt-6">
-          <h4 className="text-sm font-medium uppercase tracking-wide text-white">My role</h4>
+          <h4 className="text-sm font-medium uppercase tracking-wide text-fg">My role</h4>
           <p className="mt-2 text-sm text-mist">{project.role}</p>
         </div>
 
         <div className="mt-6">
-          <h4 className="text-sm font-medium uppercase tracking-wide text-white">Impact</h4>
+          <h4 className="text-sm font-medium uppercase tracking-wide text-fg">Impact</h4>
           <ul className="mt-3 space-y-2.5">
             {project.impact.map((point) => (
               <li key={point} className="flex gap-3 text-sm leading-relaxed text-mist">
@@ -128,7 +128,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </div>
 
         <div className="mt-6">
-          <h4 className="text-sm font-medium uppercase tracking-wide text-white">Tech stack</h4>
+          <h4 className="text-sm font-medium uppercase tracking-wide text-fg">Tech stack</h4>
           <div className="mt-3 flex flex-wrap gap-2">
             {project.tech.map((tech) => (
               <span key={tech} className="rounded-full bg-ink/60 px-3 py-1.5 text-xs text-mist">

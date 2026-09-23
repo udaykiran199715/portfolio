@@ -2,13 +2,13 @@ import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { Code2, Link, Mail, Phone, Send } from 'lucide-react'
 import { profile } from '../data/resume'
-import { isMobileDevice } from '../lib/device'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export function Contact() {
   const [status, setStatus] = useState<Status>('idle')
-  const mobile = isMobileDevice()
+  const mobile = useIsMobile()
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -60,27 +60,27 @@ export function Contact() {
           >
             <a
               href={`mailto:${profile.email}`}
-              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-white"
+              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-fg"
             >
               <Mail size={18} className="text-accent-soft" /> {profile.email}
             </a>
             <a
               href={`tel:${profile.phone}`}
-              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-white"
+              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-fg"
             >
               <Phone size={18} className="text-accent-soft" /> {profile.phone}
             </a>
             <a
               href={profile.github}
               {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
-              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-white"
+              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-fg"
             >
               <Code2 size={18} className="text-accent-soft" /> github.com/udaykiran199715
             </a>
             <a
               href={profile.linkedin}
               {...(!mobile && { target: '_blank', rel: 'noreferrer' })}
-              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-white"
+              className="flex items-center gap-3 rounded-2xl border border-panel-border bg-panel/50 p-5 text-sm text-mist transition hover:border-accent/50 hover:text-fg"
             >
               <Link size={18} className="text-accent-soft" /> linkedin.com/in/udaykiranakula
             </a>
@@ -99,14 +99,14 @@ export function Contact() {
                 required
                 name="name"
                 placeholder="Your name"
-                className="rounded-xl border border-panel-border bg-ink/60 px-4 py-3 text-sm text-white placeholder:text-mist focus:border-accent focus:outline-none"
+                className="rounded-xl border border-panel-border bg-ink/60 px-4 py-3 text-sm text-fg placeholder:text-mist focus:border-accent focus:outline-none"
               />
               <input
                 required
                 type="email"
                 name="email"
                 placeholder="Your email"
-                className="rounded-xl border border-panel-border bg-ink/60 px-4 py-3 text-sm text-white placeholder:text-mist focus:border-accent focus:outline-none"
+                className="rounded-xl border border-panel-border bg-ink/60 px-4 py-3 text-sm text-fg placeholder:text-mist focus:border-accent focus:outline-none"
               />
             </div>
             <textarea
@@ -114,7 +114,7 @@ export function Contact() {
               name="message"
               rows={5}
               placeholder="What are you building?"
-              className="w-full resize-none rounded-xl border border-panel-border bg-ink/60 px-4 py-3 text-sm text-white placeholder:text-mist focus:border-accent focus:outline-none"
+              className="w-full resize-none rounded-xl border border-panel-border bg-ink/60 px-4 py-3 text-sm text-fg placeholder:text-mist focus:border-accent focus:outline-none"
             />
             <button
               type="submit"
@@ -126,7 +126,7 @@ export function Contact() {
             </button>
             {status === 'sent' && <p className="text-sm text-mint">Thanks — I'll get back to you soon.</p>}
             {status === 'error' && (
-              <p className="text-sm text-red-400">
+              <p className="text-sm text-red-500">
                 Something went wrong — email me directly at {profile.email}.
               </p>
             )}

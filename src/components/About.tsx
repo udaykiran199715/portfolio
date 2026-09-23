@@ -25,7 +25,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-4 max-w-3xl text-2xl leading-relaxed text-white sm:text-3xl"
+          className="mt-4 max-w-3xl text-2xl leading-relaxed text-fg sm:text-3xl"
         >
           {profile.summary}
         </motion.p>

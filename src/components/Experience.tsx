@@ -35,7 +35,7 @@ export function Experience() {
             >
               <span className="absolute -left-[41px] top-1.5 h-3 w-3 rounded-full border-2 border-ink bg-accent sm:-left-[49px]" />
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-display text-xl font-semibold text-white">{job.role}</h3>
+                <h3 className="font-display text-xl font-semibold text-fg">{job.role}</h3>
                 <span className="text-sm text-mist">{job.period}</span>
               </div>
               <p className="mt-1 text-accent-soft">

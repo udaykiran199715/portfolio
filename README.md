@@ -2,6 +2,21 @@
 
 Personal portfolio site, built with React, TypeScript, Tailwind CSS, and Framer Motion.
 
+## Static generation
+
+`npm run build` type-checks, builds the client bundle, then pre-renders the page to static HTML
+(`src/entry-server.tsx` + `scripts/prerender.mjs`) so crawlers and link previews see the real
+content without running JS. The client hydrates that HTML on load. Cloudflare Pages needs no extra
+setup: build command `npm run build`, output directory `dist`.
+
+To check the built output locally, run `npm run preview`.
+
+## Theming
+
+Dark is the base palette in `src/index.css`; light overrides the same color tokens under
+`[data-theme='light']`. The nav toggle offers Light / Dark / System (saved in `localStorage`), and a
+small inline script in `index.html` applies the theme before first paint to avoid a flash.
+
 ## Development
 
 ```bash

@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Eye, Menu, X } from 'lucide-react'
+import { Eye, FileText, Menu, X } from 'lucide-react'
 import clsx from 'clsx'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { ResumeModal } from './ResumeModal'
+import { ThemeToggle } from './ThemeToggle'
 
 const links = [
   { id: 'about', label: 'About' },
@@ -37,7 +38,7 @@ export function Nav() {
                 href={`#${link.id}`}
                 className={clsx(
                   'relative rounded-full px-4 py-2 text-sm transition-colors',
-                  active === link.id ? 'text-white' : 'text-mist hover:text-white',
+                  active === link.id ? 'text-fg' : 'text-mist hover:text-fg',
                 )}
               >
                 {active === link.id && (
@@ -54,9 +55,10 @@ export function Nav() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <button
             onClick={() => setResumeOpen(true)}
-            className="flex items-center gap-1.5 rounded-full border border-panel-border px-4 py-2 text-sm text-mist transition hover:border-mist hover:text-white"
+            className="flex items-center gap-1.5 rounded-full border border-panel-border px-4 py-2 text-sm text-mist transition hover:border-mist hover:text-fg"
           >
             <Eye size={14} /> Resume
           </button>
@@ -68,13 +70,19 @@ export function Nav() {
           </a>
         </div>
 
-        <button
-          className="text-mist md:hidden"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setResumeOpen(true)}
+            aria-label="Preview resume"
+            className="rounded-full border border-panel-border p-2 text-mist transition hover:text-fg"
+          >
+            <FileText size={16} />
+          </button>
+          <button className="p-1 text-mist" aria-label="Toggle menu" onClick={() => setOpen((v) => !v)}>
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -89,23 +97,12 @@ export function Nav() {
               <a
                 href={`#${link.id}`}
                 onClick={() => setOpen(false)}
-                className={clsx('block rounded-lg px-3 py-2 text-sm', active === link.id ? 'bg-panel text-white' : 'text-mist')}
+                className={clsx('block rounded-lg px-3 py-2 text-sm', active === link.id ? 'bg-panel text-fg' : 'text-mist')}
               >
                 {link.label}
               </a>
             </li>
           ))}
-          <li>
-            <button
-              onClick={() => {
-                setOpen(false)
-                setResumeOpen(true)
-              }}
-              className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm text-mist"
-            >
-              <Eye size={14} /> Preview resume
-            </button>
-          </li>
         </motion.ul>
       )}
 
