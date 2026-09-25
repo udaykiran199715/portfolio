@@ -3,8 +3,8 @@ import { profile } from '../data/resume'
 
 const stats = [
   { value: '6+', label: 'Years shipping production software' },
-  { value: '5', label: 'Domains: PM, logistics, community, insurance, e-commerce' },
-  { value: '15+', label: 'Feature modules owned end-to-end on a single app' },
+  { value: '6', label: 'Domains: solar, logistics, CRM, community, insurance, e-commerce' },
+  { value: '100k+', label: 'Records handled in virtualized data grids' },
 ]
 
 export function About() {
@@ -25,7 +25,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-4 max-w-3xl text-2xl leading-relaxed text-fg sm:text-3xl"
+          className="mt-4 max-w-3xl text-xl leading-relaxed text-fg sm:text-2xl"
         >
           {profile.summary}
         </motion.p>

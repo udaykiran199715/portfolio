@@ -31,7 +31,7 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: gi * 0.08 }}
-              className="rounded-2xl border border-panel-border bg-panel/50 p-6"
+              className="rounded-2xl border border-panel-border bg-panel/50 p-6 md:last:odd:col-span-2"
             >
               <h3 className="mb-4 font-display text-lg font-medium text-fg">{group.label}</h3>
               <div className="flex flex-wrap gap-2">
